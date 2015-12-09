@@ -1,0 +1,82 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <form method='POST' enctype="multipart/form-data">
+        <input type='file' name='file' class='form-control'>
+        <input type="text" name="caption" >
+        <select class="select" name="galeria">
+          <% @galleries.each do | k , v | %>
+            <option value=<%= k %> ><%= v %></option>
+          <% end %>
+        </select>
+        <button type='submit'> Add</button>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .images-list{
+
+  }
+
+    .images-list .images-list-item{
+        text-align: center;
+        width:  calc(25% - 30px);
+        float:  left;
+        margin: 0 10px 10px 0;
+    }
+
+      .images-list .images-list-header{
+         clear: both;
+         padding:    10px;
+         background-color: rgba(0, 0, 0, 0.9);
+         color:      white;
+         border-radius: 4px;
+         font-size:     24px;
+         margin-top: 30px;
+         margin-bottom: 30px;
+         font-family: 'Poiret One', cursive;
+      }
+
+      .images-list .images-list-item img{
+        display: block;
+        width: 100%;
+      }
+
+        .images-list .images-list-item.last{
+          clear: both;
+        }
+
+</style>
+
+<div class='images-list col-md-12'>
+<% count = 0 %>
+<% last_gallery = nil %>
+<% @images.each_with_index do | image , i | %>
+
+  <% if last_gallery != image.galeria %>
+  <div class="images-list-header">
+    <%= @galleries[ image.galeria ]  %>
+    <% count = 0 %>
+  </div>
+  <% end %>
+
+  <% if count%4 == 0 && count != 0%>
+    <div class="images-list-item last">
+  <% end %>
+
+  <% if count%4 != 0 || count == 0 %>
+    <div class="images-list-item">
+  <% end %>
+    <img src="<%= image.image.url %>" class='thumbnail'  />
+    <a href="/admin/uploads/delete/images/<%= image.id %>" class="btn btn-danger"><i class='fa fa-trash'></i></a>
+  </div>
+
+  <% count += 1 %>
+
+  <% last_gallery = image.galeria %>
+
+<% end %>
+</div>

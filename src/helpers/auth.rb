@@ -63,6 +63,10 @@ module Sinatra
 
       end
 
+      def super_protected!
+        redirect '/admin' unless authenticated?
+      end
+
       #Make sure that the user that is authenticated
       #is the passed in user
       def protected_for_user!( user )
@@ -73,7 +77,7 @@ module Sinatra
 
       def logout!( redirect = true )
         session[:authorized] = nil
-        redirect options.login_url if options.login_url
+        redirect options.login_url if redirect
       end
 
     end

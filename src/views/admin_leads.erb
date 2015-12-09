@@ -1,0 +1,84 @@
+
+
+<div class="row">
+  <div class="col-md-3">
+    <select name='status' class='select-auto-refresh form-control'>
+    <% { "" => "All" , "0" => "Pending" , "1" => "Contacted" }.each do | key , value | %>
+      <option value='<%= key %>' <%= params[:status] ==  key ? "selected" : "" %>><%= value %></option>
+    <% end %>
+    </select>
+  </div>
+  <div class="col-md-3 col-md-offset-6">
+    <form method="GET" action="/admin/leads">
+        <div class='form-group'>
+            <div class="input-group">
+                <input name='search' type='text' class='form-control' placeholder='Search' />
+                <span class="input-group-addon">
+                    <i class='fa fa-search'></i>
+                </span>
+            </div>
+        </div>
+
+    </form>
+  </div>
+</div>
+
+
+
+
+
+<div class='table-responsive'>
+<table class='table table-bordered table-striped'>
+  <thead>
+    <tr>
+      <th> Name </th>
+      <th> Email </th>
+      <th> Servico </th>
+      <th> Mensaje </th>
+      <th> Fecha del Post </th>
+      <th> Status </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @leads.each do | lead |  %>
+      <tr>
+        <td>
+          <a href="/admin/leads/<%= lead.id %>">
+             <%= lead.name %>
+          </a>
+        </td>
+        <td> <%= lead.email %> </td>
+        <td>
+          <%= lead.servicio %>
+        </td>
+        <td>
+          <%= lead.message %>
+        </td>
+        <td>
+         <%= lead.created_at.in_time_zone("America/La_Paz").strftime("%d/%m/%Y %H:%M")  %>
+        </td>
+        <td>
+        <% if lead.status == 0 %>
+          Pendiente
+        <% else %>
+          Contactado
+      <%  end %>
+      </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+
+<div class='text-center'>
+  <%= will_paginate @leads, renderer: BootstrapPagination::Sinatra %>
+</div>
+
+
+
+<script>
+
+
+
+</script>

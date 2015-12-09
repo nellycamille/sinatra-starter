@@ -1,0 +1,345 @@
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+
+.sub-nav{
+  font-size: 11pt;
+  text-align: left;
+  padding-top: 5px;
+}
+
+.nav{
+  font-family: 'Poiret One', cursive;
+  font-weight: bolder;
+  font-size: 11pt;
+  text-align: center;
+}
+#mobile{
+  display: none;
+}
+.firma{
+  font-family: 'Indie Flower', cursive;
+  font-size: 14pt;
+  text-align: center;
+  margin-top: 0 !important;
+}
+.credito{
+  font-family: 'Poiret One', cursive;
+  font-size: 11pt;
+}
+.slideshow{
+  padding-top: 30px;
+}
+
+.butts > span{
+  display: none;
+  text-align: center;
+  color: red;
+  width: 90%;
+  background-color: blue;
+  position: absolute;
+  height: 23.5vh;
+  opacity: 0.5;
+}
+.butts:hover > span{
+  display: block;
+}
+.fotos-home{
+  margin-bottom: 29px;
+}
+.fotos-home2{
+  margin-bottom: 36px;
+}
+.fotos-historia{
+margin-bottom: 90px;
+margin-top: 20px;
+}
+.fotos-historia{
+
+margin-top: 20px;
+}
+.fa-facebook-square{
+  font-size: 30pt;
+}
+.foto-tag{
+  font-family: 'Poiret One', cursive;
+  font-size: 13pt;
+}
+.footer{
+  font-family: 'Poiret One', cursive;
+  font-weight: bolder;
+  font-size: 13pt;
+  text-align: center;
+  color: #038CA0;
+}
+.span{
+  text-align: center;
+}
+.contact{
+  font-family: 'Poiret One', cursive;
+  padding-bottom: 50px;
+
+  text-align: center;
+}
+.contacto{
+  font-family: 'Poiret One', cursive;
+}
+.contact-info{
+  padding-top: 50px;
+}
+.contact-info h1{
+  font-family: 'Montserrat', sans-serif;
+  color: #8E3074;
+  font-size: 18pt;
+  text-align: center;
+}
+.contact-info h2{
+  font-family: 'Montserrat', sans-serif;
+  color: gray;
+  font-size: 14pt;
+  text-align: center;
+}
+.contact-info p{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 12pt;
+  color: gray;
+  text-align: center;
+}
+.face{
+  text-align: center;
+  padding-left: 0 !important;
+}
+}
+.fa-facebook-square:active{
+  color: #3E5B9A;
+  padding-left: 0;
+  text-align: center;
+}
+.about-services p{
+  font-family: 'EB Garamond', serif;
+  font-size: 14pt;
+  color: gray;
+  padding-left: 35px;
+  padding-top: 10px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+}
+.about-services h2{
+  font-family: 'Poiret One', cursive;
+  font-size: 18pt;
+  font-weight: bolder;
+  color: black;
+  padding-left: 5px;
+}
+.parto-service{
+margin-bottom: 0 !important;
+margin-top: 70px;
+}
+/////////////// Dropdown //////////////////////////
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,300);
+.cssmenu {
+  font-size: 13px;
+  font-weight: bolder;
+  position: fixed !important;
+
+}
+#cssmenu > ul {
+  font-family: 'Poiret One', cursive;
+  list-style-type: none;
+  padding-right: 40px;
+  margin: 30px auto;
+  text-align: center;
+  border-bottom: 5px;
+  font-weight: bolder;
+  font-size: 13pt;
+}
+#cssmenu a{
+  padding-left: 40px;
+}
+#cssmenu > ul li#responsive-tab {
+  display: none;
+
+  /* Hide for large screens */
+
+}
+#cssmenu > ul li {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+
+#cssmenu > ul li a {
+  font-family: 'Poiret One', cursive;
+  font-size: 17px;
+}
+
+#cssmenu > ul li.right {
+  float: right;
+}
+#cssmenu > ul li.has-sub {
+  position: relative;
+}
+#cssmenu > ul li.has-sub:hover ul {
+  display: block;
+}
+#cssmenu > ul li.has-sub ul {
+  display: none;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+#cssmenu > ul li.has-sub ul li {
+  display: block;
+}
+#cssmenu > ul li.has-sub > a {
+  font-family: 'Poiret One', cursive;
+  font-size: 17px;
+}
+#cssmenu > ul li.has-sub > a.active,
+#cssmenu > ul li.has-sub > a:hover {
+
+}
+#cssmenu > ul li a {
+  display: block;
+
+  text-decoration: none;
+  color: #747474;
+  text-shadow: 0px 1px 0px #fff;
+}
+#cssmenu > ul li a.active,
+#cssmenu > ul li a:hover {
+  color: #038CA0;
+
+
+}
+
+@media (max-width: 1024px){
+  #mobile{
+    display: block;
+  }
+
+  #desktop{
+    display: none !important;
+  }
+
+  #cssmenu > ul li{
+    display: block !important;
+    list-style: none !important;
+    margin-top: 1%;
+  }
+
+}
+
+@media (max-width: 600px) {
+  #mobile{
+    display: block !important;
+  }
+  .about-services p{
+    font-size: 14pt !important;
+  }
+
+  #desktop{
+    display: none !important;
+  }
+  #cssmenu > ul li{
+    display: block !important;
+    list-style: none !important;
+    margin-top: 1%;
+  }
+  #cssmenu > ul {
+    width: 100%;
+  }
+  #cssmenu > ul li#responsive-tab {
+    display: block;
+  }
+  #cssmenu > ul li#responsive-tab a {
+
+  }
+  #cssmenu > ul li#responsive-tab a:hover {
+
+
+  }
+  /*#cssmenu > ul li {
+    display: none;
+  }*/
+  #cssmenu > ul li.right {
+    float: none;
+  }
+  #cssmenu > ul li.has-sub {
+    position: relative;
+  }
+  #cssmenu > ul li.has-sub ul {
+    display: block;
+    position: static;
+    width: 100%;
+    border: 0 none;
+    text-align: center;
+  }
+  #cssmenu > ul li.has-sub ul li {
+    display: block !important;
+  }
+  #cssmenu > ul li.has-sub ul li a span {
+    display: block;
+
+  }
+  #cssmenu > ul li.has-sub > a {
+    background-image: none;
+  }
+}
+/* Make sure they show even if hidden in mobile view by JS */
+@media (min-width: 600px) {
+  /*#cssmenu > ul > li.collapsed {
+    display: inline-block !important;
+    *display: inline;
+    zoom: 1;
+  }*/
+  .about-services{
+    font-size: 13pt !important;
+  }
+  #cssmenu > ul ul li.collapsed {
+    display: block !important;
+  }
+}
+
+@media (min-width: 1440px) {
+  .butts > span{
+    height: 20.25vh;
+  }
+}
+
+
+/* /////////// END Dropdow /////////////////////// */
+
+.header-detailed{
+  color: #017F90;
+  font-family: 'Poiret One', cursive;
+  font-weight: bolder;
+  font-size: 20pt;
+}
+.panel-detailed{
+  color: #767676;
+  font-family: 'Poiret One', cursive;
+  font-weight: lighter;
+  font-size: 14pt;
+}
+.datos-detailed{
+
+}
+
+.comments-list .media{
+    border-bottom: 1px dotted #ccc;
+}
+
+.comments-list .btn.btn-default{
+  background-color: blue;
+}
+
+.logo-admin{
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+.logout-admin{
+  padding-top: 20px !important;
+  padding-right: 20px !important;
+}

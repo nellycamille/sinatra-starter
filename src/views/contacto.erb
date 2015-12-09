@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="col-md-4 col-md-offset-6">
+    <% if @invalid %>
+      <div class='alert alert-danger'>
+         There was an error with your submission
+      </div>
+    <% end %>
+
+    <% if @success %>
+      <div class='alert alert-success'>
+         Thank you for your submission!
+      </div>
+    <% end %>
+  </div>
+
+</div>
+
+
+
+<div class="row">
+  <div class="col-md-6 col-xs-12">
+    <div class="contact-info">
+      <h1>Photocabinet</h1>
+      <h2>Adamaris Aponte-Cuadrado</h2>
+      <p>
+        787.415.5322 | photocabinetpr@gmail.com
+      </p>
+      <p>
+        Calle Betances #227<br>
+        San Juan, Puerto Rico
+      </p>
+      <ul class="face">
+        <a href="https://www.facebook.com/photocabinetpr">
+        <li class="fa fa-facebook-square fa-2x"></li></a></ul>
+    </div>
+  </div>
+    <div class="col-md-4 col-xs-12 contacto">
+      <form method='POST'>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Name</label>
+          <input type='text' name='lead[name]'  class='form-control' placeholder='Name'/>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" name="lead[email]" class="form-control" id="exampleInputEmail1" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Teléfono</label>
+          <input type="text" name="lead[telephone]" class="form-control" id="exampleInputPassword1" placeholder="Teléfono">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Servicio solicitado</label>
+          <input type="text" name="lead[servicio]" class="form-control" id="exampleInputPassword1" placeholder="Servicio">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Mensaje</label>
+          <textarea type="text"  name="lead[message]" class="form-control" id="exampleInputPassword1" placeholder="Optional"> </textarea>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+  </div>
