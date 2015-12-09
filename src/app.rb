@@ -1,4 +1,5 @@
 #Setup environment
+require 'pry'
 require 'bundler/setup'
 require 'dotenv'
 Dotenv.load
@@ -37,21 +38,35 @@ class MyApplication < Sinatra::Base
 
   #Configure Development
   configure :development do
-    require 'pry'
+
+
+    #Save uploads locally for development
+    CarrierWave.configure do |config|
+      config.storage = :file
+      config.root = File.dirname(__FILE__) + "/public"
+    end
+
   end
 
-  CarrierWave.configure do |config|
-    config.fog_credentials = {
-      :provider              => 'AWS',
-      :aws_access_key_id     => ENV['AWS_KEY'],
-      :aws_secret_access_key => ENV['AWS_SECRET'],
-      :region                => 'us-east-1'
-    }
-    config.cache_dir      = File.dirname(__FILE__) + "/tmp"
-    config.fog_directory  = ENV['AWS_BUCKET_NAME']
-    config.fog_public     = true
-    config.fog_attributes = { 'Cache-Control' => "max-age=#{365.day.to_i}" }
-    config.storage        = :fog
+  #Configure Production
+  configure :production do
+
+    #Uploads files to S3 for production
+    CarrierWave.configure do |config|
+      config.storage = :fog
+      config.fog_credentials = {
+        :provider              => 'AWS',
+        :aws_access_key_id     => ENV['AWS_KEY'],
+        :aws_secret_access_key => ENV['AWS_SECRET'],
+        :region                => 'us-east-1'
+      }
+      config.cache_dir      = File.dirname(__FILE__) + "/tmp"
+      config.fog_directory  = ENV['AWS_BUCKET_NAME']
+      config.fog_public     = true
+      config.fog_attributes = { 'Cache-Control' => "max-age=#{365.day.to_i}" }
+      config.storage        = :fog
+    end
+
   end
 
 end
