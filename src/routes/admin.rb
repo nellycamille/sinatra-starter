@@ -1,4 +1,3 @@
-
 class MyApplication < Sinatra::Base
   include Sinatra::Auth::Helpers
 
@@ -8,6 +7,11 @@ class MyApplication < Sinatra::Base
     else
       erb :login
     end
+  end
+
+  get "/logout" do
+    logout! false
+    redirect "/"
   end
 
   post "/admin" do
