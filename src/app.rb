@@ -1,5 +1,4 @@
 #Setup environment
-require 'pry'
 require 'bundler/setup'
 require 'dotenv'
 Dotenv.load
@@ -39,6 +38,8 @@ class MyApplication < Sinatra::Base
   #Configure Development
   configure :development do
 
+    #Require pry
+    require 'pry'
 
     #Save uploads locally for development
     CarrierWave.configure do |config|
