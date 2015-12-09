@@ -13,9 +13,9 @@ gem 'pg'
 gem 'carrierwave'
 gem "fog"
 gem "fog-aws"
+gem 'thin'
 
 group :development do
-  gem 'thin'
   gem 'pry'
   gem 'pry-byebug'
   gem 'shotgun'
