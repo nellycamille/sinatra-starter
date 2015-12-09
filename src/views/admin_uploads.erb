@@ -1,21 +1,3 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <form method='POST' enctype="multipart/form-data">
-        <input type='file' name='file' class='form-control'>
-        <input type="text" name="caption" >
-        <select class="select" name="galeria">
-          <% @galleries.each do | k , v | %>
-            <option value=<%= k %> ><%= v %></option>
-          <% end %>
-        </select>
-        <button type='submit'> Add</button>
-      </form>
-    </div>
-
-  </div>
-</div>
-
 <style>
   .images-list{
 
@@ -51,32 +33,84 @@
 
 </style>
 
-<div class='images-list col-md-12'>
-<% count = 0 %>
-<% last_gallery = nil %>
-<% @images.each_with_index do | image , i | %>
+  <div class='panel panel-default'>
+    <div class="panel-heading">
+       <h3 class="panel-title">
+         <i class='fa fa-image'></i>
+         Add a new Image
+       </h3>
+     </div>
+     <div class="panel-body">
 
-  <% if last_gallery != image.galeria %>
-  <div class="images-list-header">
-    <%= @galleries[ image.galeria ]  %>
-    <% count = 0 %>
+        <form class='form-inline' method='POST' enctype="multipart/form-data">
+          <div class='form-group'>
+            <label for='upload_file'>Image:</label> &nbsp;
+            <input id='upload_file' type='file' name='file' class='form-control'>
+          </div>
+
+          &nbsp;&nbsp;&nbsp;
+
+          <div class='form-group'>
+            <label for='upload_gallery'>Gallery:</label> &nbsp;
+            <select id='gallery' class="form-control" name="galeria">
+              <% @galleries.each do | k , v | %>
+                <option value=<%= k %> ><%= v %></option>
+              <% end %>
+            </select>
+          </div>
+
+          &nbsp;&nbsp;&nbsp;
+
+          <button type='submit' class='btn btn-primary'>
+            <i class='fa fa-image'></i>
+            Add
+          </button>
+        </form>
+
+     </div>
   </div>
-  <% end %>
 
-  <% if count%4 == 0 && count != 0%>
-    <div class="images-list-item last">
-  <% end %>
+<div class='panel panel-default'>
+  <div class="panel-heading">
+     <h3 class="panel-title">
+       <i class='fa fa-image'></i>
+       Uploaded Images
+     </h3>
+   </div>
+   <div class="panel-body">
 
-  <% if count%4 != 0 || count == 0 %>
-    <div class="images-list-item">
-  <% end %>
-    <img src="<%= image.image.url %>" class='thumbnail'  />
-    <a href="/admin/uploads/delete/images/<%= image.id %>" class="btn btn-danger"><i class='fa fa-trash'></i></a>
-  </div>
+       <div class='images-list'>
+       <% count = 0 %>
+       <% last_gallery = nil %>
+       <% @images.each_with_index do | image , i | %>
 
-  <% count += 1 %>
+         <% if last_gallery != image.galeria %>
+         <div class="images-list-header">
+           <%= @galleries[ image.galeria ]  %>
+           <% count = 0 %>
+         </div>
+         <% end %>
 
-  <% last_gallery = image.galeria %>
+         <% if count%4 == 0 && count != 0%>
+           <div class="images-list-item last">
+         <% end %>
 
-<% end %>
+         <% if count%4 != 0 || count == 0 %>
+           <div class="images-list-item">
+         <% end %>
+           <img src="<%= image.image.url %>" class='thumbnail'  />
+           <a href="/admin/uploads/delete/images/<%= image.id %>" class="btn btn-block btn-danger">
+             <i class='fa fa-trash'></i>
+             Delete Image
+           </a>
+         </div>
+
+         <% count += 1 %>
+
+         <% last_gallery = image.galeria %>
+
+       <% end %>
+       </div>
+
+   </div>
 </div>
