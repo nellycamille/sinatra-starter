@@ -65,7 +65,6 @@ class MyApplication < Sinatra::Base
       config.fog_directory  = ENV['AWS_BUCKET_NAME']
       config.fog_public     = true
       config.fog_attributes = { 'Cache-Control' => "max-age=#{365.day.to_i}" }
-      config.storage        = :fog
     end
 
   end
