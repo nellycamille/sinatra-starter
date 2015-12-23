@@ -50,11 +50,14 @@
 }
 .fotos-historia{
 margin-bottom: 90px;
-margin-top: 20px;
+margin-top: 40px;
+height: 350px;
 }
-.fotos-historia{
-
-margin-top: 20px;
+.foto-travesia{
+  margin-top: 60px;
+}
+.travesia{
+  margin-top: 20px;
 }
 .fa-facebook-square{
   font-size: 30pt;
@@ -83,7 +86,8 @@ margin-top: 20px;
   font-family: 'Poiret One', cursive;
 }
 .contact-info{
-  padding-top: 50px;
+  padding-top: 80px;
+
 }
 .contact-info h1{
   font-family: 'Montserrat', sans-serif;
@@ -336,4 +340,15 @@ margin-top: 70px;
 
 #admin-header{
     padding: 20px;
+}
+
+.login-css{
+  padding-top: 75px;
+
+}
+.forma{
+  padding-top: 30px;
+}
+.galerias{
+  padding-top: 75px;
 }

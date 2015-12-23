@@ -35,6 +35,7 @@ module Sinatra
 
         #Find the user
         password_hashed = Digest::SHA256.hexdigest( password )
+        
         user = User.find_by( username: username , password: password_hashed )
 
         #Save the user id to the session

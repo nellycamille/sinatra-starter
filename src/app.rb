@@ -48,7 +48,7 @@ class MyApplication < Sinatra::Base
     end
 
   end
-
+  
   #Configure Production
   configure :production do
 
